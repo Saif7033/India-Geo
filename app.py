@@ -1,10 +1,14 @@
 #libraries
+import requests
 import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 #import seaborn as sns
 import plotly.express as px
+
+
+
 
 
 #data and files
@@ -14,6 +18,7 @@ list_of_state[0]='Overall India'
 
 #page
 st.set_page_config(layout="wide")
+
 st.title('This is My project')
 st.sidebar.title("India's visuals")
 selected_item= st.sidebar.selectbox('Select State',list_of_state)
@@ -43,7 +48,7 @@ if btn1:
         )
 
 
-        fig.show()
+
         st.plotly_chart(fig,use_container_width=True)
     else:
 
@@ -54,7 +59,7 @@ if btn1:
             lon="Longitude",
             size=primary,
             color=secondary,
-            zoom=3.5,
+            zoom=5.5,
             color_continuous_scale=px.colors.diverging.Spectral,
             hover_name="District",
             hover_data=["State", "literacy_rate", "Muslim_rate"],
@@ -63,7 +68,7 @@ if btn1:
             height=700,
             title="District-wise Demographics (Size=Pop, Color=Sex Ratio)"
         )
-        fig.show()
+
         st.plotly_chart(fig,use_container_width=True)
 
 
