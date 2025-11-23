@@ -1,12 +1,10 @@
 #libraries
 
-import requests
 import streamlit as st
 import numpy as np
 import pandas as pd
-
 import plotly.express as px
-
+import requests
 
 
 
@@ -14,7 +12,7 @@ import plotly.express as px
 #data and files
 df= pd.read_csv('india.csv')
 list_of_state= list(df['State'].unique())
-list_of_state[0]='Overall India'
+list_of_state.insert(0, 'Overall India')
 
 #page
 st.set_page_config(layout="wide")
